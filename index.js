@@ -27,13 +27,13 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- *  // counter1 is a variable with a function, and counter2 is a function that returns a variable of "count ++" (the "count" variable plus one of itself).
+ *  // counter1 is a variable that is defined by a function, and counter2 is a function that returns a variable of "count" (the "count" variable plus one of itself).
  * //
  * 2. Which of the two uses a closure? How can you tell?
- * // counter2 is using a closure, because the variable "count" is being called inside the    function even when it was declared outside of the function. //
+ * // counter1 is using a closure, because the variable "counter" is being returned outside the function after it was defined inside of the function. //
  * //
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * // 
 */
 
 // counter1 code
@@ -58,14 +58,14 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(){
+function inningRuns(){
 
   let score = Math.round(Math.random() * 2);
-  return score
+  return score;
 
 }
 
-console.log(inning());
+console.log(inningRuns());
 
 
 /* Task 3: finalScore()
@@ -82,11 +82,22 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inningRuns, innNum){
+    let score = {
+      'Home': 0, 'Away': 0
+    }
 
-  /*Code Here*/
+    for(let i = 1; i <= innNum; i++){
+      score.Home = inningRuns() + score.Home;
+      console.log(inningRuns(), i + 'th inning');
 
+      score.Away = inningRuns() + score.Away;
+      console.log(inningRuns(), i + 'th inning');
+    }
+    return score;
 }
+
+console.log(finalScore(inningRuns,9));
 
 /* Task 4: 
 
@@ -109,8 +120,7 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
+function scoreboard(inning, innNum) {
   /* CODE HERE */
 }
-
 
