@@ -42,6 +42,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+// A closure is an inner (child) function that has access to the outer (parent) functions variables in the global scope.
 
 //
 2. Study the following code, then answer the questions below.
@@ -65,13 +66,13 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
-//
+// the function of `dansRoll()` is the closure because it is a variable defined with the function of `personalDice()` whic is the function that has the actual function directions inside of itself (function scope).
 //
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-//
+// The only thing that remains the same is the string for Dan's `name`. It remains the same because the variable of `dansRoll` was defined to have the function called on with the paramater of "Dan" in the function of `personalDice`. It could change if we used `zoesRoll` so that way it would console.log the string of `"Zoe rolled a ${newRoll}"`. Other than that, the outcome of the random dice roll will always be different based on the instructions inside the funtion of `personalDice`.
 //
 c. What is the lexical scope of `newRoll`? 
-//
+// The variable newRoll is inside the scope of the original function, `personalDice`.
 //
 
 ### Task 3 - Stretch Goals
